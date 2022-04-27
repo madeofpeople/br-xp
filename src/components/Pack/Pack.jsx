@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// replace this with masked jpg
 import packArt from '../../img/pack.png';
 import Card from '../Card/Card.jsx';
 import MaskTop from '../../svg/card-pack__mask-top.svg';
@@ -20,7 +21,8 @@ function Pack (props) {
   const packSelection = getMultipleRandom(cardData.cards, 3);
   const cards = packSelection.map(({ id, name, rarity, type }) =>
     <Card
-      defaultFlippedState={ false }
+      flippedByDefault={ true }
+      flipOnDelay={ true }
       hasTiltEffect={ true }
       key={ id }
       id={ id }

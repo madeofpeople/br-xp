@@ -7,6 +7,7 @@ function CardShowcase () {
   const images = require.context('../../../public/lions', true);
   const cards = cardData.cards.map(({ id, name, rarity, type }) =>
     <Card
+      flipOnDelay={ false }
       hasTiltEffect={ true }
       key={ id }
       id={ id }

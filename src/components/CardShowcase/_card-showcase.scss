@@ -1,6 +1,7 @@
 @use "../../scss/abstracts/breakpoints";
 
 #card-showcase {
+
   .showcase {
     padding: 4rem;
     padding-bottom: 12rem;
@@ -14,18 +15,30 @@
 
     .card {
       aspect-ratio: 5/7;
-      $w: calc( 25vw - 4rem);
+      $w: calc( 50vw - 4rem);
       width: $w;
       height: calc((7/5)*$w);
+
+      @media (min-width: breakpoints.bp(sm)) {
+        $w: calc( 25vw - 4rem);
+        width: $w;
+        height: calc((7/5)*$w);
+      }
+
+      @media (min-width: breakpoints.bp(md)) {
+        $w: calc( 20vw - 4rem);
+        width: $w;
+        height: calc((7/5)*$w);
+      }
     }
 
     @media (min-width: breakpoints.bp(sm)) {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     @media (min-width: breakpoints.bp(md)) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
   }
 }
