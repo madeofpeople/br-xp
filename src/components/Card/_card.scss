@@ -64,7 +64,6 @@ $card-border-radius: 0.75rem;
     .card__front,
     .card__back {
       position: absolute;
-      background: white;
     }
 
     .card__front {
@@ -73,12 +72,6 @@ $card-border-radius: 0.75rem;
 
     .card__back {
       transform: rotate3d( 0, 1, 0, 0.5turn);
-      img {
-        backface-visibility: hidden;
-      }
-      >svg {
-
-      }
     }
 
     .card__type {
