@@ -90,6 +90,8 @@ $card-border-radius: 0.75rem;
       font-family: sans-serif;
       font-size: 16px;
       background-color: colors.c('emphasis');
+      padding-top: 0.325rem;
+      padding-bottom: 0.325rem;
       transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -11.2deg);
     }
 
