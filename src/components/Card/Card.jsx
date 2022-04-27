@@ -1,8 +1,9 @@
 
 import React, { Fragment, useState, useRef, useEffect} from 'react'
 import CardFrame from '../../svg/card-frame.svg';
+import CardFrameBack from '../../svg/card-frame-back.svg';
 import ConditionalTilter from '../ConditionalTilter/ConditionalTilter.jsx';
-import cardBack from '../../img/cardback.jpg';
+import cardBack from '../../img/cardback-with-frame.png';
 
 import "./_card.scss";
 
@@ -11,7 +12,7 @@ const cardType = "Billionaires";
 const Card = ({ flippedByDefault, flipOnDelay, hasTiltEffect, id, img, rarity, name, type }) => {
   const [isFlipped, setOrientation] = useState(flippedByDefault);
   const tilt = hasTiltEffect ? hasTiltEffect : false;
-  const flipDelay = 2700;
+  const flipDelay = 2300;
 
   const flipCard = () => {
     setOrientation(isFlipped? false : true)
@@ -20,7 +21,6 @@ const Card = ({ flippedByDefault, flipOnDelay, hasTiltEffect, id, img, rarity, n
 const timerRef = useRef(null)
 useEffect(() => {
   if (flipOnDelay == true) {
-//      console.log('a', name, flipDelay, Date.now())
     timerRef.current = setTimeout( ()=> {
       flipCard(name)
       return () => clearTimeout(timerRef.current)
