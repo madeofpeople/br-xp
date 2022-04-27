@@ -39,7 +39,7 @@ $card-border-radius: 0.75rem;
     transform-style: preserve-3d;
     transition-property: transform;
     transition-timing-function: ease-out;
-    transition-duration: 0.3s;
+    transition-duration: 0.35s;
     position: relative;
     transform: rotate3d(0,0,0,0);
     box-shadow: 0.25rem 0.25rem 2rem rgba(#000, 0.6);
@@ -67,7 +67,7 @@ $card-border-radius: 0.75rem;
     }
 
     .card__front {
-      transform: translateZ(1px);
+      z-index: 2;
     }
 
     .card__back {
@@ -108,8 +108,15 @@ $card-border-radius: 0.75rem;
   }
 
   .card__element {
+    .card__front {
+      transform: translateZ(2px);
+      backface-visibility: hidden;
+    }
     &.flipped {
       transform: rotate3d( 0, 1, 0, 180deg);
+      .card__back {
+        // transform: translateZ(3px)
+      }
     }
   }
 }

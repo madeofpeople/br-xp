@@ -12,7 +12,7 @@ const cardType = "Billionaires";
 const Card = ({ flippedByDefault, flipOnDelay, hasTiltEffect, id, img, rarity, name, type }) => {
   const [isFlipped, setOrientation] = useState(flippedByDefault);
   const tilt = hasTiltEffect ? hasTiltEffect : false;
-  const flipDelay = 2300;
+  const flipDelay = 1700;
 
   const flipCard = () => {
     setOrientation(isFlipped? false : true)
@@ -30,6 +30,9 @@ useEffect(() => {
 
   return (
     <div className="card">
+      <ConditionalTilter
+        condition={ tilt }
+      >
       <div
         className={
           `card__element
@@ -38,29 +41,22 @@ useEffect(() => {
         }
         onClick={ ()=> { flipCard() }}>
         <div className="card__front">
-          <ConditionalTilter
-            condition={ tilt }
-          >
             <CardFrame />
-            /*
+            {/*
               This is where the content would go
               <div className="card__content">
                 { name }
               </div>
-            */
+            */}
             <img src={ `img/${id}.jpeg` } />
-          </ConditionalTilter>
         </div>
         <div className="card__back" aria-hidden>
-          <ConditionalTilter
-            condition={ tilt }
-          >
             <CardFrameBack />
             <img src={cardBack} />
             <h3 className="card__type">{ type }</h3>
-          </ConditionalTilter>
         </div>
       </div>
+    </ConditionalTilter>
     </div>
   );
 };
