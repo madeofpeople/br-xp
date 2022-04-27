@@ -1,0 +1,7 @@
+<svg width="500" height="700" preserveAspectRatio="true" viewBox="0 0 500 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="mask">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M500 0H0V86.082C84.3914 73.5184 136.646 75.7635 184.831 77.8339C261.953 81.1474 328.651 84.0131 500 25V0ZM500 699.5H0V700H500V699.5Z" fill="#FF0000"/>
+    </clipPath>
+  </defs>
+</svg>

@@ -1,0 +1,13 @@
+@mixin crosshair {
+  &::before {
+    content: '+';
+    z-index: 1200;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    left: -1rem;
+    top: -1rem;
+    position: absolute;
+  }
+}

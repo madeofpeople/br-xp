@@ -1,0 +1,58 @@
+@use "../../scss/abstracts/_colors.scss";
+
+.modal__wrapper {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5000;
+  transform: translateZ(105vh);
+  position: fixed;
+  backdrop-filter: blur(32px);
+  background-color: rgba(#fff, 0.5);
+  box-sizing: border-box;
+  padding: 2rem;
+  transform-style: preserve-3d;
+  visibility: hidden;
+  top: 0;
+  .modal {
+    top: 100vh;
+    // z-index: 1350;
+  }
+
+  &.opened {
+    display: block;
+    visibility: visible;
+    top: 0;
+    z-index: 10000;
+    .modal {
+      top: 0;
+    }
+  }
+
+  .modal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: colors.c(rare);
+
+    .modal__header {
+      display: flex;
+      position: relative;
+      z-index: 1100;
+      .modal__close {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+      }
+    }
+    .modal__content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+$colors: (
+  "common": #000,
+  "uncommon": #A8A4AE,
+  "rare": #EFA143,
+  "ltd": #F25A5A,
+  "emphasis": #EFA143,
+  "lightest": #fff,
+  "modalbg": #34015A,
+  "text": #222,
+  "green": #3FBE98,
+);
+
+@function c($key) {
+  @return map-get($colors, $key);
+}

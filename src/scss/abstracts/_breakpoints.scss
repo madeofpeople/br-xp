@@ -1,0 +1,12 @@
+$bps: (
+  "xs": 480px,
+  "sm": 700px,
+  "md": 1000px,
+  "lg": 1398px,
+  "xl": 1600px,
+  "xxl": 2000px,
+);
+
+@function bp($key) {
+  @return map-get($bps, $key);
+}

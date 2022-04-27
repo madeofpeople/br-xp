@@ -1,0 +1,126 @@
+@use "sass:list";
+@use "../../scss/abstracts/reset.scss";
+@use "../../scss/abstracts/colors.scss";
+
+$card-border-radius: 1rem;
+
+%fill-parent {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+
+  aspect-ratio: 5/7;
+
+  .js-tilt-glare {
+    border-radius: $card-border-radius;
+  }
+
+  .tilter,
+  .card__element,
+  .overflow-container,
+  .card__front,
+  .card__back,
+  .card__element svg,
+  .card__element img {
+    @extend %fill-parent;
+    aspect-ratio: 5/7;
+    border-radius: $card-border-radius;
+  }
+
+  .tilter {
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: $card-border-radius;
+  }
+
+  .card__element {
+    position: absolute;
+    // this is where the flipping happens
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+    position: relative;
+    transform: rotate3d(0,0,0,0);
+    box-shadow: 0.25rem 0.25rem 2rem rgba(#000, 0.5);
+
+    .overflow-container {
+      position: relative;
+      overflow: hidden !important;
+    }
+
+    svg,
+    img {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .card__front,
+    .card__back {
+      position: absolute;
+      background: white;
+      backface-visibility: hidden;
+      img {
+        top: 0;
+        left: 0;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
+    .card__front {
+      transform: translateZ(-5rem);
+      z-index: 2;
+      background: white;
+      svg {
+        z-index: 10;
+        backface-visibility: hidden;
+      }
+
+    }
+
+    .card__back {
+      z-index: 1;
+      .card__type {
+        position: absolute;
+        width: 100%;
+        top: 66%;
+        left: 50%;
+        text-align: center;
+        font-family: sans-serif;
+        transform: translate3d(-50%, -50%, 0) rotate3d(-0.0913, 1, 0, 180deg);
+      }
+      img {
+        transform: rotateY( 180deg);
+      }
+    }
+
+    &.flipped {
+      transform: rotate3d( 0, 1, 0, 180deg);
+      .card__back {
+        z-index: 30;
+      }
+    }
+
+    &.uncommon {
+      .card-frame_svg__crown {
+        fill: colors.c('uncommon');
+      }
+    }
+
+    &.rare {
+      .card-frame_svg__crown {
+        fill: colors.c('rare');
+      }
+    }
+
+    &.ltd {
+      .card-frame_svg__crown {
+        fill: colors.c('ltd');
+      }
+    }
+  }
+}
