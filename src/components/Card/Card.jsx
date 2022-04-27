@@ -55,6 +55,7 @@ useEffect(() => {
           <ConditionalTilter
             condition={ tilt }
           >
+            <CardFrameBack />
             <img src={cardBack} />
             <h3 className="card__type">{ type }</h3>
           </ConditionalTilter>

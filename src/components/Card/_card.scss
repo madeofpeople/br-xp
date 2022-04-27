@@ -12,7 +12,6 @@ $card-border-radius: 0.75rem;
 .card {
 
   aspect-ratio: 5/7;
-
   .js-tilt-glare {
     border-radius: $card-border-radius;
   }
@@ -90,6 +89,7 @@ $card-border-radius: 0.75rem;
       text-align: center;
       font-family: sans-serif;
       font-size: 16px;
+      background-color: colors.c('emphasis');
       transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -11.2deg);
     }
 
