@@ -21,7 +21,7 @@ body {
   transition-property: left;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
-  width: 300vw;
+  width: 1000vw;
   display: flex;
   height: 100vh;
 
@@ -35,17 +35,8 @@ body {
     display: inline-block;
     overflow-x: hidden;
     overflow-y: auto;
-  }
-
-  &[data-section="card"] {
-    left: 0;
-  }
-
-  &[data-section="pack-xp"] {
-    left: -100vw;
-  }
-
-  &[data-section="card-drop-xp"] {
-    left: -200vw;
+    &.accent-bg {
+      background: radial-gradient(75.74% 69.58% at 50% 15.04%, #7D10DE 0%, #330059 100%);
+    }
   }
 }

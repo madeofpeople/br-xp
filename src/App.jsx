@@ -1,34 +1,50 @@
 import React, { useState, useEffect, useRef } from 'react';
-import CardShowcase from './components/CardShowcase/CardShowcase.jsx';
-import Modal from './components/Modal/Modal.jsx';
-import Button from './components/Button/Button.jsx';
-import DemoControls from './components/DemoControls/DemoControls.jsx';
-import CardDropExperience from './components/CardDropExperience/CardDropExperience.jsx';
-import PackOpeningExperience from './components/PackOpeningExperience/PackOpeningExperience.jsx';
+import Button from './components/Button/Button';
+import Modal from './components/Modal/Modal';
+import DemoControls from './components/DemoControls/DemoControls';
+import CardShowcase from './components/CardShowcase/CardShowcase';
+import CardDrop from './components/CardDrop/CardDrop';
+import PackOpening from './components/PackOpening/PackOpening';
+import Onboarding from './components/Onboarding/Onboarding';
 
 function App() {
 
-  const [whichSection, setSection] = useState('card');
-  const [packModalState, setPackModalState] = useState(false);
-  const [cardDropModalState, setCardDropModalState] = useState(false);
+  const [deckWidth, setDeckWidth] = useState(0);
+  const [whichSection, setSection] = useState(0);
+
+  useEffect((args) => {
+    const deck = document.getElementById("slide-deck");
+    const slides = deck.querySelectorAll(".slide");
+    if ( deckWidth !== 0 ) {
+      setDeckWidth((slides.length * 100) + "vw");
+    }
+  },[]);
 
   return (
     <div style={{
         position:"relative",
         height: "100vh"
       }}>
-      <div className="slide-deck" data-section={whichSection}>
-        <section className="slide" id="card-showcase">
-          <CardShowcase />
-        </section>
-        <section className="slide" id="pack-xp">
-          <PackOpeningExperience />
+      <div
+        className="slide-deck"
+        id="slide-deck"
+        data-section={whichSection}
+        style={{ width: deckWidth, left: -(100*whichSection) + "vw" }}
+        >
+        <section className="slide" id="pack-opening-xp">
+          <PackOpening />
         </section>
         <section className="slide" id="card-drop-xp">
-          <CardDropExperience />
+          <CardDrop />
+        </section>
+        <section className="slide accent-bg" id="onboarding-xp">
+          <Onboarding />
+        </section>
+        <section className="slide" id="card-showcase-xp">
+          <CardShowcase />
         </section>
       </div>
-      <DemoControls setSection={ setSection }></DemoControls>
+      <DemoControls setSection={ setSection } whichSection={ whichSection } />
     </div>
   );
 };

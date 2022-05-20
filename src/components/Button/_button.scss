@@ -2,10 +2,6 @@
 @use '../../scss/abstracts/typography';
 
 .button {
-  position: absolute;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  bottom: 10rem;
   width: 400px;
   margin: 0 auto;
   padding: 0.5rem 1rem;

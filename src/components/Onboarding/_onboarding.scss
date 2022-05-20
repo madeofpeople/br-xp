@@ -1,0 +1,31 @@
+@use '../../scss/abstracts/_center.scss';
+
+$progress-width: 60vw;
+
+.onboarding-wrapper {
+
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  .onboarding__steps {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+
+    > section {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      > button {
+        @include center.center--abs;
+      }
+    }
+  }
+
+  .progress-meter {
+    position: absolute;
+    bottom: 2rem;
+    transform: translate3d(-50%, 0, 0);
+  }
+}

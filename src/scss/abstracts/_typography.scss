@@ -8,6 +8,8 @@ $fontsizes: (
   "tertiary": 21px,
   "bigger": 18px,
   "body": 16px,
+  "smaller": 14px,
+  "smallest": 12px,
 );
 
 @function size($key) {

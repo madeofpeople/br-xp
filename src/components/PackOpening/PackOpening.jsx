@@ -2,22 +2,25 @@ import React, { useState } from 'react'
 import Modal from '../Modal/Modal';
 import Pack from '../Pack/Pack';
 import Button from '../Button/Button';
-import './_packopeningexperience.scss';
+import './_packopening.scss';
 
-function PackOpeningExperience (props) {
+function PackOpening () {
   const [packStatus, setPackStatus] = useState(false);
   const [modalStatus, setModalStatus] = useState('closed');
   const [isStageSet, setStage] = useState(false);
 
   const closeModal = ()=> {
     setModalStatus('closed')
-    setStage(false)
+    setTimeout(()=> setStage(false), 320)
   }
 
   const openModal = ()=> {
     setModalStatus('opened')
-    // hacky bit to stagger animatons
-    // when transition-delay wasnt sticking on title and pack
+    /* hacky bit to stagger animatons
+        when transition-delay wasnt sticking on title and pack
+          but helps impriove performance since animations in the modal
+            will wait til the modal opening animation is onComplete
+    */
     setTimeout(()=> setStage(true), 320)
   }
 
@@ -35,11 +38,11 @@ function PackOpeningExperience (props) {
       </div>
       <h2 className="subhead">Secondary Headline</h2>
     </Modal>
-    <Button clickHandler={ openModal }>
+    <Button className="button" onClick={ ()=> openModal() }>
       <span>Open a pack!</span>
     </Button>
     </>
   );
 };
 
-export default PackOpeningExperience;
+export default PackOpening;

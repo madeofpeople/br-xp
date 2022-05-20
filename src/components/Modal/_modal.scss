@@ -1,4 +1,17 @@
 @use "../../scss/abstracts/_colors.scss";
+@use "../../scss/abstracts/_center.scss";
+
+@keyframes starburstspin {
+  from {
+    transform: rotate3d(0, 0, 1, 0);
+  }
+  50% {
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
 
 .modal__wrapper {
   top: 0;
@@ -15,9 +28,15 @@
   transform-style: preserve-3d;
   visibility: hidden;
   top: 0;
+
   .modal {
     top: 100vh;
-    // z-index: 1350;
+  }
+
+  .modal__content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
   }
 
   &.opened {
@@ -25,6 +44,7 @@
     visibility: visible;
     top: 0;
     z-index: 10000;
+
     .modal {
       top: 0;
     }
@@ -49,10 +69,103 @@
         top: 2rem;
       }
     }
+
     .modal__content {
       position: relative;
       width: 100%;
       height: 100%;
+    }
+  }
+}
+
+@mixin starburst-animation {
+  animation: starburstspin
+    linear
+    90s
+    infinite
+    forwards
+    running;
+}
+
+@mixin modal--fancy {
+
+  // transition
+  transition-timing-function: ease-in;
+  transition-property: transform opacity;
+  transition-duration: 0.5s;
+
+  .modal {
+    background-color: colors.c(rare);
+    perspective: 1000px;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 100vh, 0) scale3d(.23, .23, .23) rotate3d(1, 0, 0, -80deg);
+    transition:
+      transform 0.5s cubic-bezier(.54,0,.69,1.31),
+      background-color 0.5s 0.5s ease-in;
+
+    .title {
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.54, 0.52, 0.46, 1);
+      transition-duration: 0.75s;
+      transform: translate3d(0, -30vh, 0) rotate3d(0, 0, 0, 0);
+    }
+
+    .subhead {
+      position: absolute;
+      width: 100%;
+      bottom: 4rem;
+      margin-top: 0;
+      color: white;
+      text-align: center;
+    }
+
+    .modal__content > svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .starburst_svg__group {
+      will-change: transform;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: translate3d(50%, 50%, 0);
+    }
+  }
+
+  &.opened {
+    transform: translate3d(0, 0, 0);
+    .modal {
+      perspective: 200px;
+      transform-origin: bottom;
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(1, 0, 0, 0);
+      background-color: colors.c(modalbg);
+    }
+  }
+
+  &.opened.stage-set {
+
+    .starburst_svg__group {
+
+      path {
+        @include starburst-animation;
+      }
+
+      path:nth-child(2) {
+        animation-duration: 200s;
+      }
+      path:nth-child(3) {
+        animation-duration: 150s;
+      }
+    }
+
+    .title {
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, -1.7deg);
     }
   }
 }

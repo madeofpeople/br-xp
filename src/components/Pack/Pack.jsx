@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
 // replace this with masked jpg
 import packArt from '../../img/pack.png';
-import Card from '../Card/Card.jsx';
+import Card from '../Card/Card';
 import MaskTop from '../../svg/card-pack__mask-top.svg';
 import MaskBottom from '../../svg/card-pack__mask-bottom.svg';
 import cardData from '../../data/card-data';
+import getMultipleRandom from '../../js/random.js';
 import "./_pack.scss";
-
-function getMultipleRandom(arr, num) {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, num);
-}
 
 function Pack (props) {
   const [status, setStatus] = useState(false);
@@ -23,6 +19,7 @@ function Pack (props) {
     <Card
       flippedByDefault={ true }
       flipOnDelay={ true }
+      flipDelay={ 2300 }
       hasTiltEffect={ true }
       key={ id }
       id={ id }

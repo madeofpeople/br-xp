@@ -1,12 +1,11 @@
 .demo__controls {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   z-index: 3000;
-  background-color: white;
-  z-index: bottom;
+  background-color: rgba(white, 0.85);
   width: 100%;
-  padding: 2rem;
+  padding: 0.5rem;
   box-shadow: 0 1rem 2rem rgba(#000, 0.7);
   transform: translateZ(100vh);
 

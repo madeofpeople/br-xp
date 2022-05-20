@@ -8,6 +8,26 @@
   transform-origin: center;
 }
 
+@mixin center--abs {
+  @include center;
+  position: absolute;
+}
+
+@mixin center-h {
+  position: relative;
+  left: 50%;
+  margin: 0 auto;
+  width: 20rem;
+  transform: translate3d(-50%, 0, 0);
+}
+
+@mixin center-h--abs {
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transform-origin: center;
+}
+
 @mixin center-rot {
   position: relative;
   left: 50%;

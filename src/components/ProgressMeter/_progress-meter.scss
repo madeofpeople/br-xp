@@ -1,0 +1,136 @@
+@use "sass:list";
+@use "../../scss/abstracts/reset.scss";
+@use "../../scss/abstracts/center.scss";
+@use "../../scss/abstracts/colors.scss";
+@use "../../scss/abstracts/typography.scss";
+@use "../../scss/abstracts/sr-only.scss";
+
+
+
+.progress-meter {
+
+  @include center.center-h--abs;
+  width: 70vw;
+
+  .onboarding-rewards {
+    position: relative;
+    bottom: 3rem;
+    text-align: center;
+    color: colors.c(accent--light);
+
+    h2 {
+      margin-bottom: 2.3rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        display: inline-block;
+        max-width: 5rem;
+        position: relative;
+
+        span {
+          display: block;
+          font-size: typography.size(smallest);
+        }
+
+        .reward {
+          position: relative;
+          margin-top: 2.325rem;
+          font-size: typography.size(bigger);
+          font-weight: 900;
+          line-height: 110%;
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          box-sizing: border-box;
+          left: 50%;
+          top: 50%;
+          z-index: 20;
+          border-radius: 50%;
+          background-color: colors.c(accent--mid);
+          transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
+          transition-property: color opacity transform;
+          transition-duration: 0.3s;
+          transition-delay: 0.325s;
+          transition-timing-function: cubic-bezier(0.57, 2, 0.83, .7);
+          height: 1.5rem;
+          width: 1.5rem;
+          opacity: 1;
+        }
+
+        &::before {
+          // height: 1.5rem;
+          // width: 1.5rem;
+          z-index: 1;
+          transition-delay: 0.325s;
+          transition-duration: 0.5s;
+          transition-timing-function: ease-out;
+        }
+
+        &.active::before {
+          background-color: white;
+          opacity: 0;
+          transform: translate3d(-50%, -50%, 0) scale3d(6, 6, 1);
+        }
+
+        &.active::after {
+          background-color: colors.c(accent--light);
+          opacity: 1;
+          transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+        }
+      }
+    }
+  }
+
+  .progress-meter__indicator {
+
+    @include center.center-h--abs;
+    width: 65.25vw;
+    top: 6.75rem;
+
+    .bar {
+      border-radius: 1rem;
+      background-color: colors.c(accent--mid);
+      text-align: left;
+      height: 0.75rem;
+      position: relative;
+      top: 0;
+      width: 55vw;
+    }
+
+    .percent-indicator__outer {
+      position: relative;
+      width: 100%;
+    }
+
+    .percent-indicator__inner {
+      position: absolute;
+      transition-timing-function: ease-in;
+      transition-property: width, opacity;
+      transition-duration: 0.5s;
+      background-color: colors.c(accent--light);
+    }
+
+    .progress-meter__step {
+      &.active .award {
+        // border: 1px #f00 solid;
+      }
+    }
+
+    .percent-indicator__outer {
+      .percent-indicator__inner {
+
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "../../scss/abstracts/packdimensions";
+@use "../../scss/abstracts/center";
+@use '../Modal/_modal.scss';
+
+#card-drop-xp {
+
+  .modal__wrapper {
+    @include modal.modal--fancy;
+  }
+
+  .card {
+    @include packdimensions.dimensions;
+    @include center.center;
+    position: absolute;
+    transition: transform 0.75s cubic-bezier(.2,1.2,0.66,1);
+    transform: translate3d( -50%, 150vh, 0) scale3d(1.5, 1.5, 1);
+  }
+
+  .card-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .modal__wrapper.opened {
+    .card {
+      transform: translate3d( -50%, 150vh, 0) scale3d(1.5, 1.5, 1);
+    }
+  }
+
+  .modal__wrapper.opened.stage-set {
+    .card {
+      transform: translate3d( -50%, -40%, 0) scale3d(1, 1, 1);
+    }
+  }
+}

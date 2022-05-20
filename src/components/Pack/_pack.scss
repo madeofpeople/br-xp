@@ -118,6 +118,10 @@
     animation-fill-mode: forwards;
     animation-play-state: running;
     animation-direction: normal;
+    &:hover {
+      // to override stuff
+      z-index: 500 !important;
+    }
   }
 
   .card:nth-child(1) {
@@ -133,9 +137,5 @@
   .card:nth-child(3) {
     animation-name: cardFanC;
     z-index: 10;
-  }
-
-  .card:hover {
-    z-index: 500;
   }
 }
