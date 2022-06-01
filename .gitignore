@@ -80,7 +80,7 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+## dist - removing this, so we can keep dist in the repo, will facilitate github pages deployment
 
 # Gatsby files
 .cache/
