@@ -11,19 +11,20 @@ const mockData = [
   },
   {
     step: "Your Total Entries Bonus",
-    award: "A 150 Bonus"
+    award: "150 Bonus"
   },
   {
     step: "Complete Sign Up",
-    award: "B 150 Bonus"
+    award: "150 Bonus"
   },
   {
     step: "Select Fave 5",
-    award: "C 150 Bonus"
+    award: "150 Bonus",
+    optional: true
   },
   {
     step: "Link Bank",
-    award: "D 150 Bonus"
+    award: "150 Bonus"
   }
 ];
 
@@ -84,9 +85,11 @@ function Onboarding (props) {
                     <Button onClick={ ()=> {
                       if (step <= mockData.length - 1) nextStep(step + 1)
                     }}>Next Step</Button>
-                    <a className="skip-link" href="#" onClick={()=> {
-                        if (step <= mockData.length - 1) nextStep(step + 1, true)
-                      }}>Skip</a>
+                  { item.optional &&
+                      <a className="skip-link" href="#" onClick={()=> {
+                          if (step <= mockData.length - 1) nextStep(step + 1, true)
+                        }}>Skip</a>
+                    }
                   </div>
                 </div>
               }
