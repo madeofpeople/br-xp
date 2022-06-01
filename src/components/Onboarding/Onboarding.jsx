@@ -4,6 +4,7 @@ import ProgressMeter from '../ProgressMeter/ProgressMeter'
 import Coin from '../Coin/Coin'
 import './_onboarding.scss'
 
+// This would normally come from server call.
 const mockData = [
   {
     step: "Placeholder, a placeholder step",
