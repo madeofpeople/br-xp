@@ -28,11 +28,11 @@
   transform-origin: center;
 }
 
-@mixin center-rot {
+@mixin center-rot($x: 0, $y: 0, $z: 0, $deg: 0) {
   position: relative;
   left: 50%;
   top: 50%;
-  transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 0, 0);
+  transform: translate3d(-50%, -50%, 0) rotate3d($x, $y, $z, $deg);
   transform-origin: center;
 }
 

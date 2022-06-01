@@ -32,11 +32,6 @@ function CardDrop() {
   const type = "Billionaires"
   const images = require.context('../../../public/lions', true);
   const whichCard = getMultipleRandom(cardData.cards, 1)[0];
-  console.log('whichCard »', '\n',
-    whichCard.id, '\n',
-    whichCard.name, '\n',
-    whichCard.type, '\n',
-    whichCard.rarity);
 
   return (
     <>

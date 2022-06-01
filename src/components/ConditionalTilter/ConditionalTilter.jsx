@@ -5,7 +5,6 @@ function Tilt(props) {
   const { options, ...rest } = props;
   const tilt = useRef(null);
   useEffect(() => {
-    console.log("Card")
     VanillaTilt.init(tilt.current, options);
   }, [options]);
   return <div ref={tilt} {...rest} />;

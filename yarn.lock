@@ -1254,6 +1254,18 @@
   dependencies:
     "@types/node" "*"
 
+"@utilityjs/comparator@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@utilityjs/comparator/-/comparator-1.0.1.tgz#b6aa3cbcb1a97c5c8c59b2f4bb1d8a615b2d003c"
+  integrity sha512-HBaTM6wxdv9bZhgOdVmqL5t6yypYzBOCYmtTnZ9V5fzu+8mQC/arieZ1eire3Np4mr0IHGkrNjJj6eC4lZlTzg==
+
+"@utilityjs/linked-list@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@utilityjs/linked-list/-/linked-list-1.0.2.tgz#640de69e732a117aa0a3ad5678d08463cbf7b4b9"
+  integrity sha512-oR4qH4R0tiKJuS/jkKLiUmftjJgtVCgsdhrGCZa8f2yS1PXuMjJbXeX35m9hA/DXfbNvLD3rIAFXhixKpLP8Fg==
+  dependencies:
+    "@utilityjs/comparator" "^1.0.1"
+
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.11.1.tgz#2bfd767eae1a6996f432ff7e8d7fc75679c0b6a7"
@@ -2327,6 +2339,11 @@ graceful-fs@^4.1.2, graceful-fs@^4.2.4, graceful-fs@^4.2.6, graceful-fs@^4.2.9:
   version "4.2.10"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.10.tgz#147d3a006da4ca3ce14728c7aefc287c367d7a6c"
   integrity sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==
+
+gsap@^3.10.4:
+  version "3.10.4"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.10.4.tgz#db89a6b8f6d5cb76e274eae822cbc1aa4d31e88f"
+  integrity sha512-6QatdkKxXCMfvCW4rM++0RqyLQAzFX5nwl3yHS0XPgkZBkiSEY3VZVbMltrdtsbER/xZonLtyHt684wRp4erlQ==
 
 handle-thing@^2.0.0:
   version "2.0.1"

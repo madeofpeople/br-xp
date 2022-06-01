@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "../../scss/abstracts/reset.scss";
 @use "../../scss/abstracts/colors.scss";
+@use "../../scss/abstracts/fill-parent.scss";
 
 $card-border-radius: 0.75rem;
 
@@ -10,6 +11,7 @@ $card-border-radius: 0.75rem;
 }
 
 .card {
+  @include fill-parent.fill-parent;
 
   aspect-ratio: 5/7;
   .js-tilt-glare {
@@ -23,7 +25,7 @@ $card-border-radius: 0.75rem;
   .card__back,
   .card__element svg,
   .card__element img {
-    @extend %fill-parent;
+    @include fill-parent.fill-parent;
     aspect-ratio: 5/7;
     border-radius: $card-border-radius;
   }

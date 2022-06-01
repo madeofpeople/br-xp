@@ -1,43 +1,80 @@
 @use "sass:list";
 @use "../../scss/abstracts/reset.scss";
+@use "../../scss/abstracts/breakpoints.scss";
 @use "../../scss/abstracts/center.scss";
 @use "../../scss/abstracts/colors.scss";
 @use "../../scss/abstracts/typography.scss";
 @use "../../scss/abstracts/sr-only.scss";
 
-
-
 .progress-meter {
 
-  @include center.center-h--abs;
-  width: 70vw;
+  @include center.center-h;
+  position: absolute;
+  width: 100vw;
+  height: 10rem;
+  left: 50%;
+  bottom: 1rem;
+  height: 30vh;
+
+  @media (min-width: breakpoints.bp(xs)) {
+    bottom: 0rem;
+  }
+
+  @media (min-width: breakpoints.bp(sm)) {
+    top: auto;
+    bottom: 0;
+  }
+
+
+  .meter {
+    position: relative;
+  }
 
   .onboarding-rewards {
-    position: relative;
-    bottom: 3rem;
+    width: 100vw;
+    margin: 0 auto;
     text-align: center;
     color: colors.c(accent--light);
 
+    @media (min-width: breakpoints.bp(md)) {
+      max-width: 70vw;
+    }
+
     h2 {
-      margin-bottom: 2.3rem;
+      margin-bottom: 0;
+      margin-top: 0;
+      line-height: 1.25;
     }
 
     ul {
+      position: relative;
       list-style: none;
       margin: 0 auto;
-      padding: 0;
+      padding: 2rem;
       width: 100%;
       display: flex;
       justify-content: space-between;
 
       li {
         display: inline-block;
-        max-width: 5rem;
+        aspect-ratio: 1/1;
+        width: 4.75rem;
+        height: 4.75rem;
         position: relative;
+        background-color: colors.c(accent--mid);
+        border-radius: 50%;
+        z-index: 5;
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
 
         span {
           display: block;
           font-size: typography.size(smallest);
+          font-weight: 900;
+          width: 100%;
+          padding: 0.5rem;
+          vertical-align: middle;
+          @include center.center--abs;
+          line-height: 1;
         }
 
         .reward {
@@ -48,61 +85,48 @@
           line-height: 110%;
         }
 
-        &::before,
-        &::after {
-          content: '';
+        .emitter-canvas {
+          @include center.center;
           position: absolute;
-          box-sizing: border-box;
-          left: 50%;
-          top: 50%;
-          z-index: 20;
-          border-radius: 50%;
-          background-color: colors.c(accent--mid);
-          transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);
-          transition-property: color opacity transform;
-          transition-duration: 0.3s;
-          transition-delay: 0.325s;
-          transition-timing-function: cubic-bezier(0.57, 2, 0.83, .7);
-          height: 1.5rem;
-          width: 1.5rem;
-          opacity: 1;
+          z-index: 5;
+          width: 20rem;
+          height: 20rem;
         }
 
-        &::before {
-          // height: 1.5rem;
-          // width: 1.5rem;
-          z-index: 1;
-          transition-delay: 0.325s;
-          transition-duration: 0.5s;
-          transition-timing-function: ease-out;
-        }
-
-        &.active::before {
-          background-color: white;
-          opacity: 0;
-          transform: translate3d(-50%, -50%, 0) scale3d(6, 6, 1);
-        }
-
-        &.active::after {
+        &.visited,
+        &.active {
           background-color: colors.c(accent--light);
-          opacity: 1;
-          transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+          span {
+            color: colors.c(accent--dark);
+          }
         }
       }
     }
   }
 
+  .percent-indicator__outer {
+    box-sizing: border-box;
+  }
+
   .progress-meter__indicator {
 
     @include center.center-h--abs;
-    width: 65.25vw;
-    top: 6.75rem;
+    top: 50%;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 8px;
+
+    @media (min-width: breakpoints.bp(sm)) {
+      top: 47%;
+    }
 
     .bar {
       border-radius: 1rem;
       background-color: colors.c(accent--mid);
       text-align: left;
-      height: 0.75rem;
+      height: 0.325rem;
       position: relative;
       top: 0;
       width: 55vw;
@@ -119,18 +143,6 @@
       transition-property: width, opacity;
       transition-duration: 0.5s;
       background-color: colors.c(accent--light);
-    }
-
-    .progress-meter__step {
-      &.active .award {
-        // border: 1px #f00 solid;
-      }
-    }
-
-    .percent-indicator__outer {
-      .percent-indicator__inner {
-
-      }
     }
   }
 }

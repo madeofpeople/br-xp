@@ -32,6 +32,8 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
+    "@utilityjs/linked-list": "^1.0.2",
+    "gsap": "^3.10.4",
     "vanilla-tilt": "^1.7.2"
   }
 }
