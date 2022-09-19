@@ -1,6 +1,5 @@
 
 import React from 'react'
-// import "./_card.scss";
 
 const Slide = ({ children }) => {
   return (

@@ -82,7 +82,7 @@ function Onboarding (props) {
             <section className={`step step-${index}`} key={ index }>
               { step < mockData.length - 1 &&
                 <div className="onboarding__steps__content">
-                  <div class="content-wrapper">
+                  <div className="content-wrapper">
                     <Button onClick={ ()=> {
                       if (step <= mockData.length - 1) nextStep(step + 1)
                     }}>Next Step</Button>

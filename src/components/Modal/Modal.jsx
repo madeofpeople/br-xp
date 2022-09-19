@@ -32,7 +32,6 @@ function Modal({ hasStarburst, modalStatus, closeModal, isStageSet, children }) 
               { hasStarburst && <Starburst /> }
               </>
             }
-          }
         </div>
       </div>
     </div>

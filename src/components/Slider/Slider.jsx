@@ -3,10 +3,6 @@ import Slide from './slide'
 
 const slides = []
 
-// const slide = ({children}) => (
-//   <Slide children={} />
-// )
-
 for (const [index, value] of elements.entries()) {
   items.push(<Slide key={index}>{value}</Slide>)
 })

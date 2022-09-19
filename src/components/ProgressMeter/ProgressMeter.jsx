@@ -12,7 +12,7 @@ function ProgressMeter ({ data, step }) {
 
       <div className="onboarding-rewards">
         <h2>Earn 5 Big Rich Bucks for completing your onboarding!</h2>
-        <div class="meter">
+        <div className="meter">
           <ul>
             {
               data.map ((item, index) => {

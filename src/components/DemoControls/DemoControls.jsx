@@ -7,6 +7,11 @@ function DemoControls ({ setSection, whichSection }) {
       <nav>
         <ul>
           <li>
+            <a href="#" onClick={()=> { setSection(4) }}>
+              No Win
+            </a>
+          </li>
+          <li>
             <a href="#" onClick={()=> { setSection(0) }}>
               Pack Opening
             </a>

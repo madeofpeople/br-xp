@@ -4,6 +4,7 @@ import Modal from './components/Modal/Modal';
 import DemoControls from './components/DemoControls/DemoControls';
 import CardShowcase from './components/CardShowcase/CardShowcase';
 import CardDrop from './components/CardDrop/CardDrop';
+import NoWin from './components/NoWin/NoWin';
 import PackOpening from './components/PackOpening/PackOpening';
 import Onboarding from './components/Onboarding/Onboarding';
 
@@ -31,6 +32,9 @@ function App() {
         data-section={whichSection}
         style={{ width: deckWidth, left: -(100*whichSection) + "vw" }}
         >
+        <section className="slide" id="no-win-xp">
+          <NoWin />
+        </section>
         <section className="slide" id="pack-opening-xp">
           <PackOpening />
         </section>

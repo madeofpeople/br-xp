@@ -1,0 +1,42 @@
+@use "../../scss/abstracts/center";
+@use '../../scss/abstracts/_typography.scss';
+@use '../../scss/abstracts/_breakpoints.scss';
+@use '../Modal/_modal.scss';
+
+#no-win-xp {
+
+  .modal__wrapper {
+    @include modal.modal--fancy;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .sorry-message {
+    @include center.center-rot;
+    color: white;
+    position: absolute;
+    text-align: middle;
+    top: 45%;
+    transform: translate3d(-50%, -50%, 0) rotate3d(1, 0, 0, 90deg);
+    transform-style: preserve-3d;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    transition-duration: 0.85s;
+
+    font-size: typography.size(secondary);
+    @media (min-width: breakpoints.bp(md)) {
+      font-size: typography.size(primary);
+    }
+  }
+
+  .modal__wrapper.opened.stage-set {
+    .sorry-message {
+      transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 0, 90deg);
+    }
+  }
+}

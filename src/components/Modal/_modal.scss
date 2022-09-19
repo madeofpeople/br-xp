@@ -115,18 +115,21 @@
       transform: translate3d(0, -30vh, 0) rotate3d(0, 0, 0, 0);
     }
 
-    .subhead {
-      position: absolute;
-      width: 100%;
-      bottom: 4rem;
-      margin-top: 0;
-      color: white;
-      text-align: center;
-    }
+    .modal__content {
 
-    .modal__content > svg {
-      width: 100%;
-      height: 100%;
+      > .subhead {
+        position: absolute;
+        width: 100%;
+        bottom: 4rem;
+        margin-top: 0;
+        color: white;
+        text-align: center;
+      }
+  
+      > svg {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .starburst_svg__group {
