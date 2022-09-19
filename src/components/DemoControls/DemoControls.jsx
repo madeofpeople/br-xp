@@ -7,27 +7,27 @@ function DemoControls ({ setSection, whichSection }) {
       <nav>
         <ul>
           <li>
-            <a href="#" onClick={()=> { setSection(4) }}>
+            <a href="#" onClick={()=> { setSection(0) }}>
               No Win
             </a>
           </li>
           <li>
-            <a href="#" onClick={()=> { setSection(0) }}>
+            <a href="#" onClick={()=> { setSection(1) }}>
               Pack Opening
             </a>
           </li>
           <li>
-            <a href="#" onClick={()=> { setSection(1) }}>
+            <a href="#" onClick={()=> { setSection(2) }}>
               Card Drop
             </a>
           </li>
           <li>
-            <a href="#" onClick={()=> { setSection(2) }}>
+            <a href="#" onClick={()=> { setSection(3) }}>
               Onboarding
             </a>
           </li>
           <li>
-            <a href="#" onClick={()=> { setSection(3) }}>
+            <a href="#" onClick={()=> { setSection(4) }}>
               Card Showcase
             </a>
           </li>
