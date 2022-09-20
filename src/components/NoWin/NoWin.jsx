@@ -31,7 +31,7 @@ function NoWin() {
                 closeModal={ closeModal }
                 isStageSet={isStageSet}
                 className="modal fancy-modal">
-                <h1 className="title">Sorry!</h1>
+                <h1 className="title err">Sorry!</h1>
                 <h2 className="sorry-message">You didn't win this time, but try again next week!</h2>
                 <Button className="button">
                     <span>Continue</span>

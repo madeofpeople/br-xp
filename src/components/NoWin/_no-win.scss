@@ -27,7 +27,6 @@
     transition-property: transform;
     transition-timing-function: ease-out;
     transition-duration: 0.85s;
-
     font-size: typography.size(secondary);
     @media (min-width: breakpoints.bp(md)) {
       font-size: typography.size(primary);

@@ -114,6 +114,11 @@
       transition-duration: 0.75s;
       transform: translate3d(0, -30vh, 0) rotate3d(0, 0, 0, 0);
     }
+    
+    .err {
+      color: colors.c(ltd);
+      transform: scale3d(0, 0, 0) translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    }
 
     .modal__content {
 
@@ -168,7 +173,9 @@
     }
 
     .title {
-      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, -1.7deg);
+      transform: scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 0, 1, -3deg);
     }
   }
 }
+
+
