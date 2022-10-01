@@ -1,0 +1,19 @@
+@use "../../scss/abstracts/center";
+@use '../../scss/abstracts/_typography.scss';
+@use '../../scss/abstracts/_breakpoints.scss';
+@use '../Modal/_modal.scss';
+
+#win-non-cash {
+
+  .modal__wrapper {
+    @include modal.modal--fancy;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}

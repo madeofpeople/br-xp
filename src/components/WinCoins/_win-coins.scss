@@ -1,0 +1,67 @@
+@use "../../scss/abstracts/center";
+@use '../../scss/abstracts/_typography.scss';
+@use '../../scss/abstracts/_colors.scss';
+@use '../../scss/abstracts/_breakpoints.scss';
+@use '../Modal/_modal.scss';
+
+#win-coins-xp {
+
+  .modal__wrapper {
+    @include modal.modal--fancy;
+  }
+
+  .modal__wrapper.opened {
+
+    .message {
+      top: 30%;
+      width: 70%;
+      text-align: center;
+      transform: translate3d(-50%, -50%, 0) rotate3d(1, 0, 0, 90deg);
+      color: colors.c(emphasis);
+      
+      #coin {
+        position: absolute;
+      }
+    }
+
+    .title {
+      font-size: typography.size(secondary)* 1.5;
+      top: 5rem;
+      @media (min-width: breakpoints.bp(sm)) {
+        top: 0;
+        font-size: typography.size(primary);
+      }
+    }
+
+    .coin-wrapper {
+      position: absolute;
+      top: 120vh;
+      left: 50%;
+      transition-property: top;
+      transition-duration: 0.325s;
+      transition-timing-function: cubic-bezier(0.19, 1.2, 0.22, 1);
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+
+  .button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .modal__wrapper.opened.stage-set {
+    #coin {
+      animation-play-state: running;
+    }
+    .coin-wrapper {
+      top: 50%;
+    }
+
+    .message {
+      transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 0, 90deg);
+    }
+
+  }
+}

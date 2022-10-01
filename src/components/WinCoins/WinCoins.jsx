@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Button from '../Button/Button'
-import './_no-win.scss'
+import CoinSpin from '../CoinSpin/CoinSpin'
+import Emitter from '../Emitter/Emitter'
 
-function NoWin() {
+import './_win-coins.scss'
+
+function WinCoins({ trigger, award, emitSparks }) {
 
     const [modalStatus, setModalStatus] = useState('closed');
     const [isStageSet, setStage] = useState(false);
@@ -14,11 +17,9 @@ function NoWin() {
     }
 
     const openModal = ()=> {
-        console.log("openModal")
         setModalStatus('opened')
         setTimeout(
             function() {
-                console.log("opened delay");
                 setStage(true);
             }, 720);
     }
@@ -31,17 +32,23 @@ function NoWin() {
                 closeModal={ closeModal }
                 isStageSet={isStageSet}
                 className="modal fancy-modal">
-                <h1 className="title err">Sorry!</h1>
-                <h2 className="message">You didn't win this time, but try again next week!</h2>
+                <h1 className="title err">Congratulations</h1>
+                <div className="message">
+                    <h2>You won 10 Big Rich Coins!</h2>
+                </div>
+                <div className="coin-wrapper">
+                    <CoinSpin count="10"></CoinSpin>
+                    <Emitter></Emitter>
+                </div>
                 <Button className="button">
                     <span>Continue</span>
                 </Button>
             </Modal>
             <Button className="button" onClick={ ()=> openModal() }>
-                <span>No Win Animation</span>
+                <span>Win Coins</span>
             </Button>
         </>
     );
 };
 
-export default NoWin;
+export default WinCoins;

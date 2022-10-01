@@ -16,7 +16,7 @@
     transform: translateX(-50%);
   }
 
-  .message {
+  .sorry-message {
     @include center.center-rot;
     color: white;
     position: absolute;
@@ -34,7 +34,7 @@
   }
 
   .modal__wrapper.opened.stage-set {
-    .message {
+    .sorry-message {
       transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 0, 90deg);
     }
   }

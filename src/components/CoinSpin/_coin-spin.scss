@@ -1,0 +1,141 @@
+@use '../../scss/abstracts/colors';
+@use '../../scss/abstracts/typography';
+@use '../../scss/abstracts/center';
+
+$coin-bg: linear-gradient(120deg, #725a04 20%, #a07b15 45%, #a58126, #a17e27 95%, #795919);;
+
+#coin {
+    display: block;
+    width: 150px; 
+    height: 150px;
+    top: 10px;
+    left: 10px;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: turn 3.5s cubic-bezier(0.165, 1.24, 0.44, 1);
+    animation-play-state: paused;
+    margin:auto;
+    top:20%;
+    z-index: 5;
+    position: relative;
+  }
+  
+
+  .emitter-canvas {
+    @include center.center--abs;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  .coin{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    background: $coin-bg;
+    border-radius: 50%;
+  
+    &::before,
+    &::after {
+      content: " ";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #7a5c12;
+      position: absolute;
+      transform: translate3d(0, 0, -0.325rem);
+    }
+  
+    &::after {
+      transform: translate3d(0, 0, 0.325rem);    
+    }
+    
+    .coinface {
+      display: box;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-color: $coin-bg;
+      background-color: $coin-bg;
+      backface-visibility: visible;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0.5rem);
+      
+      .amount {
+        font-size: 80px;
+        color: #fc0;
+        text-align: center;
+        @extend h1;
+        border: 12px #fc0 solid;
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      img {
+        background-color: $coin-bg;
+        border-radius: 50%;
+        transform: rotate3d( 0, 0, 0, 0);
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+      }
+  
+      &::before,
+      &::after {
+        content: " ";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: inherit;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+         z-index: -1;
+        transform: translate3d( -50%, -50%, -0.25rem);
+      }
+  
+      &::after {
+        transform: translate3d(-50%, -50%, 0.25rem);    
+      }
+      
+      &.back::before,
+      &.back::after {
+        background-color: inherit;
+      }
+      
+      &.back {
+        background-color: $coin-bg;
+        transform: translate3d(-50%, -50%, -0.5rem);
+        .amount {
+          padding-top: 0.125rem;
+          transform: rotate3d( 0, 1, 0, 180deg);
+        }
+        .ring {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate3d(-50%, -50%, -0.5rem);
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  
+  @keyframes turn{
+    0%{
+      transform: rotateY(-360deg);
+    }
+    100%{
+      transform: rotateY(1080deg);
+    }
+  }
+  

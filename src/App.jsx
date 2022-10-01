@@ -5,6 +5,8 @@ import DemoControls from './components/DemoControls/DemoControls';
 import CardShowcase from './components/CardShowcase/CardShowcase';
 import CardDrop from './components/CardDrop/CardDrop';
 import NoWin from './components/NoWin/NoWin';
+import WinCoins from './components/WinCoins/WinCoins';
+import WinCash from './components/WinCash/WinCash';
 import PackOpening from './components/PackOpening/PackOpening';
 import Onboarding from './components/Onboarding/Onboarding';
 
@@ -35,6 +37,24 @@ function App() {
         <section className="slide" id="no-win-xp">
           <NoWin />
         </section>
+
+        <section className="slide" id="win-cash-xp">
+          <WinCash />
+        </section>
+
+        <section className="slide" id="win-coins-xp">
+          <WinCoins />
+        </section>
+
+        <section className="slide" id="win-non-cash-xp">
+          <h2>win non-cash</h2>
+        </section>
+
+        <section className="slide" id="win-entries-xp">
+          <h2>win entries</h2>
+        </section>
+
+
         <section className="slide" id="pack-opening-xp">
           <PackOpening />
         </section>

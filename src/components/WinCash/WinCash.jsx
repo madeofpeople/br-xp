@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Button from '../Button/Button'
-import './_no-win.scss'
+import Emitter from '../Emitter/Emitter'
+import Lottie from 'react-lottie-player'
+import './_win-cash.scss'
+import lottieJSON from '../../lottie/cash-pile.json' 
 
-function NoWin() {
+function WinCash({ }) {
 
     const [modalStatus, setModalStatus] = useState('closed');
     const [isStageSet, setStage] = useState(false);
@@ -14,11 +17,9 @@ function NoWin() {
     }
 
     const openModal = ()=> {
-        console.log("openModal")
         setModalStatus('opened')
         setTimeout(
             function() {
-                console.log("opened delay");
                 setStage(true);
             }, 720);
     }
@@ -31,17 +32,30 @@ function NoWin() {
                 closeModal={ closeModal }
                 isStageSet={isStageSet}
                 className="modal fancy-modal">
-                <h1 className="title err">Sorry!</h1>
-                <h2 className="message">You didn't win this time, but try again next week!</h2>
+                <h1 className="title err">Congratulations</h1>
+                <div className="message">   
+                    <h2>You've won $10,000!!!</h2>
+                </div>
+                <div className="anim-wrapper">
+                    <Lottie 
+                        loop
+                        animationData={lottieJSON} 
+                        play 
+                        style={{ 
+                            width: 650,
+                            height: 650
+                        }} />
+                    <Emitter></Emitter>
+                </div>
                 <Button className="button">
                     <span>Continue</span>
                 </Button>
             </Modal>
             <Button className="button" onClick={ ()=> openModal() }>
-                <span>No Win Animation</span>
+                <span>Win Cash</span>
             </Button>
         </>
     );
 };
 
-export default NoWin;
+export default WinCash;

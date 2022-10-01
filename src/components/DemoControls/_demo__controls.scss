@@ -1,24 +1,55 @@
+.menu__button {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+
+  a {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    background-color: white;
+    color: #222;
+    cursor: pointer;
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(#000, 0.325);
+  }
+}
+
 .demo__controls {
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 3000;
+  left: -20rem;
+  height: 100vh;
+  width: 14rem;
+  z-index: 100;
   background-color: rgba(white, 0.85);
-  width: 100%;
-  padding: 0.5rem;
   box-shadow: 0 1rem 2rem rgba(#000, 0.7);
   transform: translateZ(100vh);
+  transition-property: left;
+  transition-duration: 0.425s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
   ul {
     margin: 0;
     padding: 0;
 
     li {
-      display: inline-block;
       a {
         display: block;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-bottom: 1px #dadada solid;
+        color: #222;
+        text-decoration: none;
+        &:hover {
+          background-color: #eee;
+        }
       }
     }
+  }
+
+  &.active {
+    left: 0;
   }
 }

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Button from '../Button/Button'
-import './_no-win.scss'
+import './_win-entries.scss'
 
-function NoWin() {
+function WinEntries() {
 
     const [modalStatus, setModalStatus] = useState('closed');
     const [isStageSet, setStage] = useState(false);
@@ -31,8 +31,8 @@ function NoWin() {
                 closeModal={ closeModal }
                 isStageSet={isStageSet}
                 className="modal fancy-modal">
-                <h1 className="title err">Sorry!</h1>
-                <h2 className="message">You didn't win this time, but try again next week!</h2>
+                <h1 className="title err">You Won XX Entries!</h1>
+                <h2 className="sorry-message">Message</h2>
                 <Button className="button">
                     <span>Continue</span>
                 </Button>
@@ -44,4 +44,4 @@ function NoWin() {
     );
 };
 
-export default NoWin;
+export default WinEntries;
