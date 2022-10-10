@@ -34,7 +34,7 @@ function WinCash({ }) {
                 className="modal fancy-modal">
                 <h1 className="title err">Congratulations</h1>
                 <div className="message">   
-                    <h2>You've won $10,000!!!</h2>
+                    <h2>You've won $100,000!!!</h2>
                 </div>
                 <div className="anim-wrapper">
                     <Lottie 

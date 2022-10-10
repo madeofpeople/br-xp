@@ -132,6 +132,10 @@
       @media (min-width: breakpoints.bp(md)) {
         font-size: typography.size(primary);
       }
+
+      h2 {
+        font-size: 36px;
+      }
     }
 
     .modal__wrapper.opened.stage-set {
